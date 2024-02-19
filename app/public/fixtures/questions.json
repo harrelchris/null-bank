@@ -1,0 +1,90 @@
+[
+{
+  "model": "public.question",
+  "pk": 3,
+  "fields": {
+    "uuid": "c4693387-6d40-48d7-8679-4ea74e03f826",
+    "created_at": "2024-02-19T07:44:00.151Z",
+    "updated_at": "2024-02-19T07:44:00.151Z",
+    "question": "When will I receive my debit card?",
+    "answer": "If you open your checking account online or over the phone, we'll mail your debit card to the address listed on your application within 1 business day. Actual delivery of the card depends on postal service in your area. You can also open a checking account in a branch and receive your debit card while you're there."
+  }
+},
+{
+  "model": "public.question",
+  "pk": 4,
+  "fields": {
+    "uuid": "57328ab0-a205-433d-8f55-f42e42703ebd",
+    "created_at": "2024-02-19T07:44:29.920Z",
+    "updated_at": "2024-02-19T07:44:29.920Z",
+    "question": "I received my debit card. How do I activate it?",
+    "answer": "Activate your debit card by calling 1-888-555-0123 or by signing in to your account via digital banking."
+  }
+},
+{
+  "model": "public.question",
+  "pk": 5,
+  "fields": {
+    "uuid": "42ec2239-c79e-45a4-b929-5a3fcd906e2e",
+    "created_at": "2024-02-19T07:44:57.131Z",
+    "updated_at": "2024-02-19T07:44:57.131Z",
+    "question": "How do I add funds to my savings account?",
+    "answer": "You can fund your savings account via digital banking, at a branch or ATM, by mailing a check or by calling us at 1-888-555-0123."
+  }
+},
+{
+  "model": "public.question",
+  "pk": 6,
+  "fields": {
+    "uuid": "64550ad5-1a4c-467c-a92d-b87fb203af49",
+    "created_at": "2024-02-19T07:45:09.841Z",
+    "updated_at": "2024-02-19T07:45:09.841Z",
+    "question": "Can I have more than one savings or checking account?",
+    "answer": "Yes. There's no limit to the number of savings or checking accounts you can have."
+  }
+},
+{
+  "model": "public.question",
+  "pk": 7,
+  "fields": {
+    "uuid": "7564fb66-d067-4d18-a862-23d6e251f4b2",
+    "created_at": "2024-02-19T07:45:34.570Z",
+    "updated_at": "2024-02-19T07:45:34.570Z",
+    "question": "What digital banking advantages come with my account?",
+    "answer": "Our digital banking tools gives you quick, direct access to your funds. You can access your accounts and automate your finances using online banking or our mobile app to quickly and easily manage your money on the go."
+  }
+},
+{
+  "model": "public.question",
+  "pk": 8,
+  "fields": {
+    "uuid": "5b0c367c-3794-4ac3-8884-742b290769e1",
+    "created_at": "2024-02-19T07:45:53.076Z",
+    "updated_at": "2024-02-19T07:45:53.076Z",
+    "question": "How do I add a joint owner to my account?",
+    "answer": "To add a joint owner, you and the other person need to visit a branch together to validate their identity and start the enrollment process. If they're not available, you can initially open your account as an individual and then request an application to add them later."
+  }
+},
+{
+  "model": "public.question",
+  "pk": 9,
+  "fields": {
+    "uuid": "59faaa01-c886-4463-9fa8-c43d306cd28f",
+    "created_at": "2024-02-19T07:46:05.663Z",
+    "updated_at": "2024-02-19T07:46:05.663Z",
+    "question": "How many joint owners can I have on each savings or checking account?",
+    "answer": "You can have up to 3 joint owners on each of your savings or checking accounts."
+  }
+},
+{
+  "model": "public.question",
+  "pk": 10,
+  "fields": {
+    "uuid": "8a29b4dd-da13-47e3-bbf6-9b2cd5bd2c0d",
+    "created_at": "2024-02-19T07:46:34.291Z",
+    "updated_at": "2024-02-19T07:46:34.291Z",
+    "question": "What does joint ownership with survivorship mean?",
+    "answer": "Joint ownership with survivorship means that if one of the owners of the account dies, the surviving owner will inherit their share. Without survivorship, their share would pass to their estate or heirs, rather than to the surviving owner."
+  }
+}
+]

@@ -1,0 +1,29 @@
+{% csrf_token %}
+
+{% for field in form %}
+  <div class="mb-3">
+    {{ field }}
+    {% if field.help_text %}
+      <div class="form-help-text"{% if field.id_for_label %} id="{{ field.id_for_label }}_helptext"{% endif %}>{{ field.help_text|safe }}</div>
+    {% endif %}
+    {% if field.field.widget.input_type == "checkbox" %}
+      {{ field.label }}
+    {% endif %}
+  </div>
+  {% if field.errors %}
+    <div class="alert alert-danger" role="alert">
+      {% for error in field.errors %}
+        <p class="m-0 p-0">{{ error|escape }}</p>
+        <p>{{ field.help_text }}</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endfor %}
+
+{% if form.non_field_errors %}
+  <div class="alert alert-danger" role="alert">
+    {% for error in form.non_field_errors %}
+      <p class="m-0 p-0">{{ error|escape }}</p>
+    {% endfor %}
+  </div>
+{% endif %}
