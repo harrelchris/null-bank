@@ -1,0 +1,13 @@
+{% extends "public/base.html" %}
+
+{% block title %}Frequently Asked Questions{% endblock %}
+
+{% block content %}
+  <h1>Frequently Asked Questions</h1>
+  {% for question in questions %}
+    <div>
+      <p>{{ question.question|safe }}</p>
+      <p>{{ question.answer|safe }}</p>
+    </div>
+  {% endfor %}
+{% endblock %}
