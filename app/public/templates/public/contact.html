@@ -1,0 +1,12 @@
+{% extends "public/base.html" %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+  <h1>Contact</h1>
+  <form method="post">
+    {% csrf_token %}
+    {% include "partials/form.html" %}
+    <input type="submit" value="Submit">
+  </form>
+{% endblock %}
