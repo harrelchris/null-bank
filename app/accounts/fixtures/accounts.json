@@ -1,0 +1,157 @@
+[
+{
+  "model": "accounts.account",
+  "pk": 1,
+  "fields": {
+    "uuid": "a25fa60e-fe07-4375-84a9-5edbae611a63",
+    "created_at": "2024-02-20T22:56:49.602Z",
+    "updated_at": "2024-02-20T22:59:09.290Z",
+    "user": 3,
+    "number": 62520120,
+    "name": "Basic Checking",
+    "balance": "1500.00",
+    "available": "0.00",
+    "type": "ch"
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 2,
+  "fields": {
+    "uuid": "775c6831-485a-4e3a-b741-beab0e13a525",
+    "created_at": "2024-02-20T22:57:08.933Z",
+    "updated_at": "2024-02-20T22:59:25.711Z",
+    "user": 3,
+    "number": 62520121,
+    "name": "Casual Savings",
+    "balance": "20000.00",
+    "available": "0.00",
+    "type": "sa"
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 3,
+  "fields": {
+    "uuid": "2bb9bce8-7a52-446f-ab97-d3a0516fd1bd",
+    "created_at": "2024-02-20T22:57:25.737Z",
+    "updated_at": "2024-02-20T22:59:45.461Z",
+    "user": 3,
+    "number": 62520122,
+    "name": "Secured Visa",
+    "balance": "2000.00",
+    "available": "0.00",
+    "type": "cr"
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 4,
+  "fields": {
+    "uuid": "3ae382e1-6b15-44c1-a575-47e0f91a6440",
+    "created_at": "2024-02-20T22:57:36.866Z",
+    "updated_at": "2024-02-20T23:00:40.696Z",
+    "user": 3,
+    "number": 62520123,
+    "name": "Auto Loan",
+    "balance": "20000.00",
+    "available": "0.00",
+    "type": "ln"
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 5,
+  "fields": {
+    "uuid": "f2726b5c-f285-49b1-b409-fde6d39d9573",
+    "created_at": "2024-02-20T22:57:48.066Z",
+    "updated_at": "2024-02-20T23:01:00.461Z",
+    "user": 3,
+    "number": 62520124,
+    "name": "Mortgage",
+    "balance": "150000.00",
+    "available": "0.00",
+    "type": "ln"
+  }
+},
+{
+  "model": "accounts.transaction",
+  "pk": 1,
+  "fields": {
+    "uuid": "0b7c6227-0988-47a8-9087-1324e8721271",
+    "created_at": "2024-02-20T22:59:09.288Z",
+    "updated_at": "2024-02-20T22:59:09.288Z",
+    "account": 1,
+    "type": "dp",
+    "amount": "1500.00",
+    "balance_before": "0.00",
+    "balance_after": "1500.00",
+    "label": "Opening Deposit",
+    "status": "cp"
+  }
+},
+{
+  "model": "accounts.transaction",
+  "pk": 2,
+  "fields": {
+    "uuid": "3c8d6abb-4f07-4417-bb25-7b3cd0fdeecf",
+    "created_at": "2024-02-20T22:59:25.709Z",
+    "updated_at": "2024-02-20T22:59:25.709Z",
+    "account": 2,
+    "type": "dp",
+    "amount": "20000.00",
+    "balance_before": "0.00",
+    "balance_after": "20000.00",
+    "label": "Opening Deposit",
+    "status": "cp"
+  }
+},
+{
+  "model": "accounts.transaction",
+  "pk": 3,
+  "fields": {
+    "uuid": "ade46932-0c7d-4445-8758-aba94c5c3ce2",
+    "created_at": "2024-02-20T22:59:45.459Z",
+    "updated_at": "2024-02-20T22:59:45.459Z",
+    "account": 3,
+    "type": "dp",
+    "amount": "2000.00",
+    "balance_before": "0.00",
+    "balance_after": "2000.00",
+    "label": "Opening Deposit",
+    "status": "cp"
+  }
+},
+{
+  "model": "accounts.transaction",
+  "pk": 4,
+  "fields": {
+    "uuid": "1c7a5248-288d-4f38-9a2d-d285b041a8db",
+    "created_at": "2024-02-20T23:00:40.694Z",
+    "updated_at": "2024-02-20T23:00:40.694Z",
+    "account": 4,
+    "type": "tr",
+    "amount": "20000.00",
+    "balance_before": "0.00",
+    "balance_after": "20000.00",
+    "label": "Opening Transfer",
+    "status": "cp"
+  }
+},
+{
+  "model": "accounts.transaction",
+  "pk": 5,
+  "fields": {
+    "uuid": "f3534f06-a4a3-4e74-ad3a-c90683eb1a0c",
+    "created_at": "2024-02-20T23:01:00.458Z",
+    "updated_at": "2024-02-20T23:01:00.458Z",
+    "account": 5,
+    "type": "tr",
+    "amount": "150000.00",
+    "balance_before": "0.00",
+    "balance_after": "150000.00",
+    "label": "Opening Transfer",
+    "status": "cp"
+  }
+}
+]

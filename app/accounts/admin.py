@@ -4,11 +4,13 @@ from accounts.models import Account, Transaction
 
 
 class AccountAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("user", "type", "name", "balance", "available")
+    list_filter = ("type",)
 
 
 class TransactionAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("account", "amount", "label", "created_at")
+    list_filter = ("type",)
 
 
 admin.site.register(Account, AccountAdmin)

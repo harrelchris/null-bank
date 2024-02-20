@@ -1,0 +1,14 @@
+{% extends "accounts/base.html" %}
+
+{% block title %}Summary{% endblock %}
+
+{% block content %}
+  <h1>Summary</h1>
+  <ul>
+    {% for account in accounts %}
+      <li>
+        <a href="{% url 'accounts:account_detail' uuid=account.uuid %}">{{ account.name }}</a>: {{ account.balance }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "accounts/base.html" %}
+
+{% block title %}{{ transaction.label }}{% endblock %}
+
+{% block content %}
+  <h1>{{ transaction.label }}</h1>
+  <ul>
+    <li>Account: {{ transaction.account.name }}</li>
+    <li>Type: {{ transaction.get_type_display }}</li>
+    <li>Label: {{ transaction.label }}</li>
+    <li>Amount: {{ transaction.amount }}</li>
+    <li>Balance Before: {{ transaction.balance_before }}</li>
+    <li>Balance After: {{ transaction.balance_after }}</li>
+    <li>Status: {{ transaction.get_status_display }}</li>
+  </ul>
+{% endblock %}
