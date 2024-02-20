@@ -1,0 +1,22 @@
+html {
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+  min-height: 80vh;
+}
+
+footer {
+  flex-shrink: 0;
+}
+
+.auth-form {
+  width: 30vw;
+}

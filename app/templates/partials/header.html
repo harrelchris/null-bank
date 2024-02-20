@@ -6,8 +6,16 @@
       <span class="fs-2 mx-3">Null Bank</span>
     </a>
     <div class="col-md-3 text-end mt-2">
-      <button type="button" class="btn btn-primary me-2">Login</button>
-      <button type="button" class="btn btn-outline-primary">Join Now</button>
+      {% if user.is_authenticated %}
+        <a href="{% url 'users:profile' %}" class="btn btn-primary me-2">Profile</a>
+        <form action="{% url 'users:logout' %}" class="d-inline" method="post">
+          {% csrf_token %}
+          <input type="submit" class="btn btn-outline-primary" value="Logout">
+        </form>
+      {% else %}
+        <a href="{% url 'users:login' %}" class="btn btn-primary me-2">Login</a>
+        <a href="{% url 'users:register' %}" class="btn btn-outline-primary">Join Now</a>
+      {% endif %}
     </div>
   </div>
 </header>

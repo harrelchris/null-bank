@@ -32,6 +32,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "common",
     "public",
+    "users",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -151,3 +152,27 @@ LOGGING = {
 }
 
 ADMIN_URL = "admin/"
+
+AUTH_USER_MODEL = "users.User"
+
+LOGIN_URL = "users:login"
+
+LOGIN_REDIRECT_URL = "users:profile"
+
+LOGOUT_REDIRECT_URL = LOGIN_URL
+
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+
+EMAIL_FILE_PATH = BASE_DIR.parent / "logs/emails/"
+
+EMAIL_FROM_ADDRESS = env.str("EMAIL_FROM_ADDRESS", None)
+
+EMAIL_HOST = env.str("EMAIL_HOST")
+
+EMAIL_PORT = env.int("EMAIL_PORT")
+
+EMAIL_HOST_USER = env.str("EMAIL_HOST_USER")
+
+EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
+
+EMAIL_USE_TLS = env.bool("EMAIL_USE_TLS")

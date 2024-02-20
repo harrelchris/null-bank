@@ -1,0 +1,12 @@
+{% extends "users/base.html" %}
+
+{% block title %}Delete User Account{% endblock %}
+{% block content %}
+  <div class="d-flex py-5">
+    <form class="auth-form shadow rounded m-auto p-3" method="post">
+      <h1 class="h3 mb-3 fw-normal text-center">Delete User Account</h1>
+      {% include "partials/form.html" %}
+      <button type="submit" class="btn btn-lg btn-danger w-100">Confirm Delete User Acount</button>
+    </form>
+  </div>
+{% endblock %}
