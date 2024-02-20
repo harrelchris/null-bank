@@ -1,20 +1,103 @@
 {% extends "users/base.html" %}
 
 {% block title %}Profile{% endblock %}
+
 {% block content %}
   <div class="container">
-    <h1>Profile</h1>
-    <p>Username: {{ user.username }}</p>
-    <p>Joined: {{ user.date_joined }}</p>
-    <p>Last Login: {{ user.last_login }}</p>
+    <div class="row gutters-sm">
+      <div class="col-6">
+        <h1 class="mt-5 ms-2">Profile</h1>
+        <div class="card mt-3 mb-3 border border-1">
+          <div class="row">
+            <div class="col mx-3 mt-3">
+              <h6>Username</h6>
+            </div>
+            <div class="col mt-3 text-secondary">
+              {{ user.username }}
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col mx-3 mt-2">
+              <h6>Member Since</h6>
+            </div>
+            <div class="col mt-2 text-secondary">
+              {{ user.date_joined }}
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col mx-3 mt-2">
+              <h6>Last Login</h6>
+            </div>
+            <div class="col mt-2 text-secondary">
+              {{ user.last_login }}
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col mx-3 mb-2">
+              <h6>Email</h6>
+            </div>
+            <div class="col mb-3 text-secondary">
+              {{ user.email }}
+              {% if user.is_verified %}
+                <a href="#" data-bs-toggle="tooltip" data-bs-title="Email Verified" class="text-success">
+                  <i class="bi bi-check-circle-fill"></i>
+                </a>
+              {% else %}
+                <a href="#" data-bs-toggle="tooltip" data-bs-title="Email Unverified" class="text-danger">
+                  <i class="bi bi-x-circle-fill"></i>
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <p>Email: {{ user.email }}</p>
-    <p>Verified: {{ user.is_verified }}</p>
-    {% if not user.is_verified %}
-      <p><a href="{% url 'users:email_verify_resend' %}">Resend Verification Email</a></p>
-    {% endif %}
-    <p><a href="{% url 'users:email_change' %}">Change email</a></p>
-    <p><a href="{% url 'users:password_change' %}">Change password</a></p>
-    <p><a href="{% url 'users:delete' %}">Delete User Account</a></p>
+      <div class="col-sm-3">
+        <h1 class="mt-5 ms-2">Links</h1>
+        <div class="list-group border border-1">
+        {% if not user.is_verified %}
+          <a href="{% url 'users:email_verify_resend' %}" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <h2 class="text-success"><i class="bi bi-envelope-check-fill"></i></h2>
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Resend Verification</h6>
+                <p class="mb-0 opacity-75">Your email is unverified. Click here to resend an email verification link</p>
+              </div>
+            </div>
+          </a>
+        {% endif %}
+          <a href="{% url 'users:email_change' %}" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <h2 class="text-primary"><i class="bi bi-envelope-at-fill"></i></h2>
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Change Email</h6>
+                <p class="mb-0 opacity-75">Update your email address to ensure you receive our communications</p>
+              </div>
+            </div>
+          </a>
+          <a href="{% url 'users:password_change' %}" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <h2 class="text-warning"><i class="bi bi-person-fill-lock"></i></h2>
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Change Password</h6>
+                <p class="mb-0 opacity-75">Change your account login password. You will be logged out of other devices</p>
+              </div>
+            </div>
+          </a>
+          <a href="{% url 'users:delete' %}" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+            <h2 class="text-danger"><i class="bi bi-person-fill-dash"></i></h2>
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Delete Account</h6>
+                <p class="mb-0 opacity-75">Delete your user account and all related data. *Note: You must close all banking accounts first</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 {% endblock %}

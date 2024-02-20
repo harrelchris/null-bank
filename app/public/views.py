@@ -1,8 +1,10 @@
+from django.conf import settings
 from django.contrib import messages
+from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 from django.views.generic import FormView, ListView, TemplateView
 
-from public.forms import ContactForm
+from public.forms import ContactForm, LoginForm
 from public.models import Question
 
 
@@ -46,8 +48,15 @@ class DisclaimerView(TemplateView):
     template_name = "public/disclaimer.html"
 
 
-class IndexView(TemplateView):
+class IndexView(LoginView):
     template_name = "public/index.html"
+    form_class = LoginForm
+    success_url = reverse_lazy(settings.LOGIN_REDIRECT_URL)
+
+    def form_valid(self, form):
+        if not form.cleaned_data.get("remember", False):
+            self.request.session.set_expiry(0)
+        return super().form_valid(form=form)
 
 
 class KnowledgeView(TemplateView):

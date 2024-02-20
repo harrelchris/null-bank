@@ -1,7 +1,42 @@
 from django import forms
+from django.contrib.auth.forms import AuthenticationForm
 from django.utils.safestring import mark_safe
 
 from public.models import Contact
+
+
+class LoginForm(AuthenticationForm):
+    username = forms.CharField(
+        widget=forms.TextInput(
+            attrs={
+                "autocomplete": "username",
+                "autofocus": True,
+                "class": "form-control",
+                "placeholder": "Username",
+            },
+        ),
+    )
+    password = forms.CharField(
+        label="Password",
+        strip=False,
+        widget=forms.PasswordInput(
+            attrs={
+                "autocomplete": "password",
+                "class": "form-control",
+                "placeholder": "Password",
+            },
+        ),
+    )
+    remember = forms.BooleanField(
+        label="Remember Me",
+        required=False,
+        widget=forms.CheckboxInput(
+            attrs={
+                "checked": True,
+                "class": "form-check-input",
+            },
+        ),
+    )
 
 
 class ContactForm(forms.ModelForm):
