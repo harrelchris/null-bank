@@ -23,9 +23,18 @@
 <nav class="py-2 bg-body-secondary border-bottom">
   <div class="container d-flex flex-wrap">
     <ul class="nav me-auto">
-      <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Checking</a></li>
-      <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Savings</a></li>
-      <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Credit</a></li>
+      {% if user.is_authenticated %}
+        <li class="nav-item"><a href="{% url 'accounts:summary' %}" class="nav-link link-body-emphasis px-2">Accounts</a></li>
+        <li class="nav-item"><a href="{% url 'accounts:transfer' %}" class="nav-link link-body-emphasis px-2">Transfer</a></li>
+        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Cards</a></li>
+        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Statements</a></li>
+        <li class="nav-item"><a href="{% url 'users:profile' %}" class="nav-link link-body-emphasis px-2">Profile</a></li>
+      {% else %}
+        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Checking</a></li>
+        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Savings</a></li>
+        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Credit</a></li>
+        <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Lending</a></li>
+      {% endif %}
       <li class="nav-item"><a href="{% url 'public:contact' %}" class="nav-link link-body-emphasis px-2">Contact</a></li>
       <li class="nav-item"><a href="{% url 'public:locations' %}" class="nav-link link-body-emphasis px-2">Locations</a></li>
     </ul>

@@ -20,8 +20,8 @@ TRANSACTION_STATUSES = {
 
 TRANSACTION_TYPES = {
     "dp": "Deposit",
-    "wd": "Withdrawal",
     "tr": "Transfer",
+    "wd": "Withdrawal",
     "pt": "Payment",
 }
 

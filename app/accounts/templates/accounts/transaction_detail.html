@@ -1,16 +1,98 @@
 {% extends "accounts/base.html" %}
+{% load humanize %}
 
 {% block title %}{{ transaction.label }}{% endblock %}
 
 {% block content %}
-  <h1>{{ transaction.label }}</h1>
-  <ul>
-    <li>Account: {{ transaction.account.name }}</li>
-    <li>Type: {{ transaction.get_type_display }}</li>
-    <li>Label: {{ transaction.label }}</li>
-    <li>Amount: {{ transaction.amount }}</li>
-    <li>Balance Before: {{ transaction.balance_before }}</li>
-    <li>Balance After: {{ transaction.balance_after }}</li>
-    <li>Status: {{ transaction.get_status_display }}</li>
-  </ul>
+  <div class="container mt-3 ps-3">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'accounts:summary' %}">Summary</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'accounts:account_detail' uuid=transaction.account.uuid %}">Account</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Transaction</li>
+      </ol>
+    </nav>
+  </div>
+
+  <div class="container mt-2">
+    <div class="row">
+      <div class="col-6">
+        <h3 class="mt-3">{{ transaction.account.name|capfirst }} Transaction</h3>
+        <div class="list-group">
+          <div class="list-group-item d-flex gap-3 py-3">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Amount</h6>
+                <p class="mb-0 opacity-75">${{ transaction.amount|intcomma }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="list-group-item d-flex gap-3 py-3">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Description</h6>
+                <p class="mb-0 opacity-75">{{ transaction.label }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="list-group-item d-flex gap-3 py-3">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Account Name</h6>
+                <p class="mb-0 opacity-75">{{ transaction.account.name }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="list-group-item d-flex gap-3 py-3">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Account Type</h6>
+                <p class="mb-0 opacity-75">{{ transaction.account.get_type_display }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="list-group-item d-flex gap-3 py-3">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Date</h6>
+                <p class="mb-0 opacity-75">{{ transaction.created_at|date:"Y-m-d" }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="list-group-item d-flex gap-3 py-3">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Type</h6>
+                <p class="mb-0 opacity-75">{{ transaction.get_type_display }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="list-group-item d-flex gap-3 py-3">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Balance Before</h6>
+                <p class="mb-0 opacity-75">${{ transaction.balance_before|intcomma }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="list-group-item d-flex gap-3 py-3">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Balance After</h6>
+                <p class="mb-0 opacity-75">${{ transaction.balance_after|intcomma }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="list-group-item d-flex gap-3 py-3">
+            <div class="d-flex gap-2 w-100 justify-content-between">
+              <div>
+                <h6 class="mb-0">Status</h6>
+                <p class="mb-0 opacity-75">{{ transaction.get_status_display }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}

@@ -23,6 +23,7 @@ DJANGO_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.humanize",
 ]
 
 THIRD_PARTY_APPS = [
@@ -158,7 +159,7 @@ AUTH_USER_MODEL = "users.User"
 
 LOGIN_URL = "users:login"
 
-LOGIN_REDIRECT_URL = "users:profile"
+LOGIN_REDIRECT_URL = "accounts:summary"
 
 LOGOUT_REDIRECT_URL = LOGIN_URL
 
